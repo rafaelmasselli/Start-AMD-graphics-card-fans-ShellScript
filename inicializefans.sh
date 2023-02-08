@@ -1,7 +1,7 @@
 # !/bin/bash
 
-echo ´Executnado fans da placa de video em 1600RPM´
+echo ´Executando fans da placa de video com 36% de potência´
 
-cd /home/rafaelmasselli/amdgpu-pro-fans/
+cd /home/$USER/Start-AMD-graphics-card-fans-ShellScript/
 chmod +x amdgpu-pro-fans.sh
-sudo ./amdgpu-pro-fans.sh -s 38
+sudo ./amdgpu-pro-fans.sh -s 36

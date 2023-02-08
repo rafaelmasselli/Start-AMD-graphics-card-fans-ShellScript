@@ -1,30 +1,36 @@
-# Depricated For Replacement C++ Project
-I have depricated this project as it was meant to be an example.  I am currently developing my new project in C++ and will have a release ready soon.  It's name is GPUMAGIC and it is specifically engineered not just for mining but for managing any large compute cluster which uses **AMD** Graphics Cards.  You can get more information on it in my repository GPUMAGIC which is also the future home of the code (currently in testing and debugging)
+## Inicializador automático das fans da placa de video AMD no sistema operacional Linux Ubuntu 22.04
 
-# amdgpu-pro-fans
+### Requisitos para iniciar o projeto
 
-Author: DominiLux
-License: Apache Version 2.0
+- [git](https://git-scm.com/)
 
-This is an alpha release written in unix style bash script.  It is a simple utility that allows you to set the fan speeds for AMD cards that support use the AMD GPU PRO driver.  There are many features I will be adding to this over the coming days and weeks.
+### Descrição
 
-## Stable Branch
-The current master branch is considered the stable release.  The code in the development branch may not have been fully tested.
+#### O Script ( service-create ) vai criar um serviço de inicialização automática das fans da placa de video
 
-## Installation Instructions:
-* sudo apt-get install git
-* git clone https://github.com/dominilux/amdgpu-pro-fans
-* cd amdgpu-pro-fans
-* chmod +x amdgpu-pro-fans.sh
+<br>
 
-## Usage:
-sudo ./amdgpu-pro-fans.sh -s [speed 0 - 100]
+#### Para modificar a velocidade que as ventoinhas vai rodar ao iniciar você devera entrar no arquivo ( inicializefans.sh ) e modificar o numero que esta na frente do ( ./amdgrpu-pro-fans.sh -s )
 
-## Usage Example:
-sudo ./amdgpu-pro-fans.sh s 80
-That would set all of your fan speeds to 80 percent of their maximum speed.  The argument works perfectly as of the current stable release.
+![Alterando a potencia da fan](./.github/fan-power.gif)
 
-## Notes:
-Fully tested on Ubuntu 16.04 with AMDGPU-PRO proprietary linux drivers.  It is now compatible with all Radeon R8 Series, R9 Series, and RX Series graphics cards.  I will be adding the option to specify a specific adapter soon.  It will be in the works in the development branch and I will merge it here once it's coded, tested, and debugged.
+<hr>
 
-This version defaults to all adapters.
+### Iniciando o projeto
+
+#### Para o script iniciar junto com o sistema operacional voce precisa colocar a pasta do projeto na home do usuário
+
+```bash
+$ cd /home/$USER/
+## Clone o projeto
+$ git clone https://github.com/rafaelmasselli/Start-AMD-graphics-card-fans-ShellScript
+```
+
+### Iniciando o Script
+
+```bash
+chmod +x service-create.sh
+sudo ./service-create.sh
+```
+
+- ### [Código para fazer as fans rodar](https://github.com/dominilux/amdgpu-pro-fans)
