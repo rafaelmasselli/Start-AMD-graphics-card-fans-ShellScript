@@ -18,7 +18,7 @@ if [ $lowerstAlternative = "s" ]; then
 
     [Service]
     Type=simple
-    ExecStart=/bin/bash /home/rafaelmasselli/amdgpu-pro-fans/inicializefans.sh 
+    ExecStart=/bin/bash /home/rafaelmasselli/Start-AMD-graphics-card-fans-ShellScript/inicializefans.sh 
     TimeoutStartSec=0
 
     [Install]
