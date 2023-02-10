@@ -18,10 +18,10 @@
 
 ### Iniciando o projeto
 
-#### Para o script iniciar junto com o sistema operacional voce precisa colocar a pasta do projeto na home do usuário
+#### Para o script iniciar junto com o sistema operacional voce precisa colocar a pasta na raiz do sistema operacional
 
 ```bash
-$ cd /home/$USER/
+$ cd /
 ## Clone o projeto
 $ git clone https://github.com/rafaelmasselli/Start-AMD-graphics-card-fans-ShellScript
 ```
