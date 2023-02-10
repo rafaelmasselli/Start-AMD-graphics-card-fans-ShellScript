@@ -8,7 +8,7 @@ lowerstAlternative=$(echo $Alternative | tr '[:upper:]' '[:lower:]')
 
 if [ $lowerstAlternative = "s" ]; then
 cd /etc/systemd/system/
-echo "Criando o arquivo incialize-fans.service, no /etc/systemd/system"
+echo "Criando o arquivo turning-on-fan.service, no /etc/systemd/system"
 
 echo "[Unit]
 Description="script to run graphics card fans"
@@ -21,12 +21,12 @@ TimeoutStartSec=0
 
 [Install]
 WantedBy=default.target
-"> inicialize-fans.service
+"> turning-on-fan.service
 
-echo "Habilitando o arquivo inicialize-fans.service"
+echo "Habilitando o arquivo turning-on-fan.service"
 
 systemctl daemon-reload
-systemctl enable inicialize-fans.service
+systemctl enable turning-on-fan.service
 
 echo "O sistema ira reiniciar a 10 segundos"
 start=$(date +%s)
