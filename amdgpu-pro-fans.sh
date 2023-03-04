@@ -1,40 +1,12 @@
 #!/usr/bin/env bash
-#####################################
-#  AMDGPU-PRO LINUX UTILITIES SUITE  #
-######################################
-# Utility Name: AMDGPU-PRO-FANS
-# Version: 0.1.5
-# Version Name: MahiMahi
-# https://github.com/DominiLux/amdgpu-pro-fans
 
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-
-# http://www.apache.org/licenses/LICENSE-2.0
-
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-
-#####################################################################
-#                          *** IMPORTANT ***                        #
-# DO NOT MODIFY PAST THIS POINT IF YOU DONT KNOW WHAT YOUR DOING!!! # 
-#####################################################################
-
-############################
-# COMMAND PARSED VARIABLES #
-############################
+# COMMAND PARSED VARIABLES 
 adapter="all"
 targettemp=""
 fanpercent=""
 arguments="$@"
-##################
-# USAGE FUNCTION #
-##################
+
+# USAGE FUNCTION 
 usage ()
 {
     echo "* AMDGPU-PRO-FANS *"
@@ -43,16 +15,14 @@ usage ()
     exit
 }
 
-###########################
-# SET FAN SPEED FUNCTIONS #
-###########################
 
+# SET FAN SPEED FUNCTIONS 
 set_all_fan_speeds ()
 {
     cardcount="0";
     for CurrentCard in  /sys/class/drm/card?/ ; do
          for CurrentMonitor in "$CurrentCard"device/hwmon/hwmon?/ ; do
-              cd $CurrentMonitor # &>/dev/null
+              cd $CurrentMonitor
               workingdir="`pwd`"
               fanmax=$(head -1 "$workingdir"/pwm1_max)
               if [ $fanmax -gt 0 ] ; then    
@@ -60,8 +30,8 @@ set_all_fan_speeds ()
                   speed=$(( speed / 100 ))
                   sudo chown $USER "$workingdir"/pwm1_enable
                   sudo chown $USER "$workingdir"/pwm1
-                  sudo echo -n "1" >> $workingdir/pwm1_enable # &>/dev/null
-                  sudo echo -n "$speed" >> $workingdir/pwm1 # &>/dev/null
+                  sudo echo -n "1" >> $workingdir/pwm1_enable
+                  sudo echo -n "$speed" >> $workingdir/pwm1 
                   speedresults=$(head -1 "$workingdir"/pwm1)
                   if [ $(( speedresults - speed )) -gt 6 ] ; then
                        echo "Error Setting Speed For Card$cardcount!"
@@ -84,9 +54,8 @@ set_fans_requested ()
 }
 
 
-#################################
-# PARSE COMMAND LINE PARAMETERS #
-#################################
+
+# PARSE COMMAND LINE PARAMETERS 
 command_line_parser ()
 {
      parseline=`getopt -s bash -u -o a:s: -n '$0' -- "$arguments"` 
@@ -101,9 +70,7 @@ command_line_parser ()
     done
 }
 
-#################
-# Home Function #
-#################
 
+# Home Function 
 command_line_parser
 exit;

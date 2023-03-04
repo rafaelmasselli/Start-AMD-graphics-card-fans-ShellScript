@@ -10,7 +10,7 @@ if [ $lowerstAlternative = "s" ]; then
 cd /etc/systemd/system/
 echo "Criando o arquivo turning-on-fan.service, no /etc/systemd/system"
 
-echo "[Unit]
+echo '[Unit]
 Description="script to run graphics card fans"
 After=network.target
 
@@ -20,8 +20,7 @@ ExecStart=/bin/bash /Start-AMD-graphics-card-fans-ShellScript/inicializefans.sh
 TimeoutStartSec=0
 
 [Install]
-WantedBy=default.target
-"> turning-on-fan.service
+WantedBy=default.target'> turning-on-fan.service
 
 echo "Habilitando o arquivo turning-on-fan.service"
 

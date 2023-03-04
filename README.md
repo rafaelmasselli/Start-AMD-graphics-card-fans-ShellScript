@@ -32,5 +32,3 @@ $ sudo git clone https://github.com/rafaelmasselli/Start-AMD-graphics-card-fans-
 sudo chmod +x service-create.sh
 sudo ./service-create.sh
 ```
-
-- ### [Código para fazer as fans rodar](https://github.com/dominilux/amdgpu-pro-fans)
