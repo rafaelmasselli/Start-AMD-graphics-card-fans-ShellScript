@@ -33,4 +33,4 @@ sudo chmod +x service-create.sh
 sudo ./service-create.sh
 ```
 
-- Referencia [referências](./referencias.md)
+- [Referências](./referencias.md)
