@@ -16,7 +16,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/bash /Start-AMD-graphics-card-fans-ShellScript/inicializefans.sh
+ExecStart=/bin/bash /start-AMD-graphics-card-fans-ShellScript/inicializefans.sh
 TimeoutStartSec=0
 
 [Install]
