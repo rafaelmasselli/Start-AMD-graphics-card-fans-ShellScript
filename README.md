@@ -6,11 +6,9 @@
 
 ### Descrição
 
-#### O Script ( service-create ) vai criar um serviço de inicialização automática das fans da placa de video
+O Script ( service-create ) vai criar um serviço de inicialização automática das fans da placa de video
 
-<br>
-
-#### Para modificar a velocidade que as ventoinhas vai rodar ao iniciar você devera entrar no arquivo ( inicializefans.sh ) e modificar o numero que esta na frente do ( ./amdgrpu-pro-fans.sh -s )
+ Para modificar a velocidade que as ventoinhas vai rodar ao iniciar você devera entrar no arquivo ( inicializefans.sh ) e modificar o numero que esta na frente do ( ./amdgrpu-pro-fans.sh -s )
 
 ![Alterando a potencia da fan](./.github/fan-power.gif)
 
@@ -18,7 +16,7 @@
 
 ### Iniciando o projeto
 
-#### Para o script iniciar junto com o sistema operacional voce precisa colocar a pasta na raiz do sistema operacional
+Para o script iniciar junto com o sistema operacional voce precisa colocar a pasta na raiz do sistema operacional
 
 ```bash
 $ cd /
