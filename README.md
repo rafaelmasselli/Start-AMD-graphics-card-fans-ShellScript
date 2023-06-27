@@ -1,27 +1,27 @@
-## Inicializador automático das fans da placa de video AMD no sistema operacional Linux Ubuntu 22.04
+## Inicializador automático das ventoinhas da placa de vídeo AMD no sistema operacional Linux Ubuntu 22.04
 
-### Requisitos para iniciar o projeto
+### Requisitos 
 
 - [git](https://git-scm.com/)
 
 ### Descrição
 
-O Script ( service-create ) vai criar um serviço de inicialização automática das fans da placa de video
+Este script, chamado "service-create", cria um serviço para iniciar automaticamente as ventoinhas da placa de vídeo.
 
- Para modificar a velocidade que as ventoinhas vai rodar ao iniciar você devera entrar no arquivo ( inicializefans.sh ) e modificar o numero que esta na frente do ( ./amdgrpu-pro-fans.sh -s )
+Para ajustar a velocidade de rotação das ventoinhas ao iniciar, você precisa editar o arquivo "inicializefans.sh" e modificar o número em frente a "./amdgrpu-pro-fans.sh -s".
 
 ![Alterando a potencia da fan](./.github/fan-power.gif)
 
 <hr>
 
-### Iniciando o projeto
+### Configurando o projeto
 
-Para o script iniciar junto com o sistema operacional voce precisa colocar a pasta na raiz do sistema operacional
+Para que o script seja iniciado juntamente com o sistema operacional, você precisa colocar a pasta na raiz do sistema.
 
 ```bash
 $ cd /
 ## Clone o projeto
-$ sudo git clone https://github.com/rafaelmasselli/Start-AMD-graphics-card-fans-ShellScript
+$ sudo git clone https://github.com/rafaelmasselli/start-amd-graphics-card-fans
 ```
 
 ### Iniciando o Script
@@ -30,5 +30,6 @@ $ sudo git clone https://github.com/rafaelmasselli/Start-AMD-graphics-card-fans-
 sudo chmod +x service-create.sh
 sudo ./service-create.sh
 ```
+## Referencias
 
-- [Referências](./referencias.md)
+- [Codigo para rodar as fans](./referencias.md)
